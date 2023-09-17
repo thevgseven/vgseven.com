@@ -1,0 +1,14 @@
+.Quote {
+  margin: 10px 0;
+  span {
+    color: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .Quote {
+    span {
+      color: white;
+    }
+  }
+}

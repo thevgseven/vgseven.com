@@ -1,0 +1,22 @@
+.Ref {
+  color: black;
+  border-bottom: 1px solid black;
+  transition: ease-out 400ms;
+}
+
+.Ref:hover {
+  background: black;
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .Ref {
+    color: white;
+    border-color: white;
+  }
+
+  .Ref:hover {
+    background: white;
+    color: black;
+  }
+}

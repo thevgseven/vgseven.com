@@ -1,0 +1,31 @@
+.JoinForm {
+  background: transparent;
+  border: 1px solid #1a1a1a;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 20px;
+
+  h4 {
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+
+  p {
+    font-weight: 400;
+    margin: 10px 0;
+  }
+
+  .formSection {
+    display: flex;
+    flex-flow: row;
+  }
+}
+
+@media (max-width: 400px) {
+  .JoinForm {
+    form {
+      display: flex;
+      flex-flow: column;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.QuoteBlock {
+  display: block;
+  border-left: 4px solid #656565;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .QuoteBlock {
+    border-color: #424242;
+    color: white;
+  }
+}

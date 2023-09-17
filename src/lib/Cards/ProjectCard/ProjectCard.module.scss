@@ -1,0 +1,30 @@
+.ProjectCard {
+  display: flex;
+  flex-flow: row;
+
+  img {
+    border-radius: 10px;
+  }
+
+  .cardProfile {
+    display: flex;
+    flex-flow: column;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .ProjectCard {
+    display: flex;
+    flex-flow: column;
+
+    //img {
+    //  height: 300px;
+    //  width: 300px;
+    //}
+
+    .cardProfile {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.Form {
+  background-color: transparent;
+
+  input {
+    color: black;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    border-radius: 7px;
+    outline: none;
+    margin: 2px 2px 2px 0;
+  }
+
+  textarea {
+    color: black;
+    padding: 10px 40px 40px 10px;
+    background-color: transparent;
+    border: 1px solid #1a1a1a;
+    border-radius: 7px;
+    resize: none;
+    outline: none;
+    margin: 2px 2px 5px 0;
+  }
+
+  label {
+    font-size: 13px;
+    margin: 5px 0;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 12px;
+  }
+
+  button {
+    color: white;
+    background: black;
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    outline: none;
+    transition: ease-in-out 200ms;
+    font-weight: 400;
+  }
+
+  button:hover {
+    background: white;
+    cursor: pointer;
+    color: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .Form {
+    input,
+    button,
+    textarea {
+      color: white;
+    }
+  }
+}

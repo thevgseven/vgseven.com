@@ -1,0 +1,22 @@
+.ContactForm {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 1rem;
+
+  form {
+    background-color: #eeeeee;
+    display: flex;
+    flex-flow: column;
+    padding: 2rem;
+    border-radius: 10px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .ContactForm {
+    form {
+      background-color: #101010;
+    }
+  }
+}
