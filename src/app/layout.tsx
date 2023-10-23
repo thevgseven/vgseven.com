@@ -1,33 +1,25 @@
-import "@/styles/globals.scss";
-import { Analytics } from "@vercel/analytics/react";
-import Header from "@/lib/Layout/Header/Header";
-import Footer from "@/lib/Layout/Footer/Footer";
 import type { Metadata } from "next";
+import "@/styles/global.css";
+import { Sora as font } from "@/lib/utils/fonts";
 import React, { ReactNode } from "react";
-import { OutFitFont } from "@/lib/Config/Fonts/Fonts";
+import { ThemeProvider } from "@/lib/utils/theme-provider";
+import { Header } from "@/ui/components/header";
+import { Footer } from "@/ui/components/footer";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "VGSEVEN",
-  description:
-    "Welcome to VGSEVEN.COM, where the realms of life, psychology, philosophy, and science converge to ignite curiosity and foster intellectual growth. As a passionate writer and curator, I invite you to embark on a captivating journey through vgseven.com, where we explore the depths of human understanding and offer insights into the mysteries of existence.",
+  description: "Official VGSEVEN",
   icons: {
-    icon: "vg.png",
+    icon: "favicon.png",
   },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={OutFitFont.className}>
+    <html lang="en" className={font.className} suppressHydrationWarning>
       <body>
-        {/*Google AdSense Verification Start*/}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4155181137197417"
-          crossOrigin="anonymous"
-        />
-        {/*Google AdSense Verification End*/}
-
         {/*Google Analytics Verification Start*/}
         <Script
           strategy="afterInteractive"
@@ -41,10 +33,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           gtag('config', 'G-RG7E1L1B9N');`}
         </Script>
         {/*Google Analytics Verification End*/}
-        <Header />
-        {children}
-        <Analytics />
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <Footer />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
