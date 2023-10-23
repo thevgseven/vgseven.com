@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function EinfiHome() {
   return (
-    <div className={"mx-auto max-w-4xl mt-24"}>
+    <div className={"mx-auto max-w-4xl mt-24 max-[970px]:mx-6"}>
       <h1 className={cn("text-4xl", Auge.className)}>
         Introducing Radium, Initialize your project to get started early.
       </h1>
