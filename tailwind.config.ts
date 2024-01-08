@@ -2,7 +2,7 @@
 
 module.exports = {
   darkMode: ["class"],
-  content: ["./src/ui/**/*.{ts,tsx}", "./src/app/**/*.{ts,tsx}"],
+  content: ["./src/ui/**/*.{ts,tsx,js,jsx}", "./src/app/**/*.{ts,tsx,js,jsx}"],
   theme: {
     container: {
       center: true,
@@ -12,6 +12,11 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -1,38 +1,70 @@
 import type { Metadata } from "next";
-import "@/styles/global.css";
-import { Sora as font } from "@/lib/utils/fonts";
+import "@/styles/root-layout.css";
+import { GeistSansFont } from "@/ui/fonts/fonts";
 import React, { ReactNode } from "react";
 import { ThemeProvider } from "@/lib/utils/theme-provider";
 import { Header } from "@/ui/components/header";
-import { Footer } from "@/ui/components/footer";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "VGSEVEN",
-  description: "Official VGSEVEN",
+  description:
+    "Obsessed with AI, Quantum Computing, Space, Psychology and Philosophy and Entrepreneurship.",
   icons: {
     icon: "favicon.png",
+  },
+  openGraph: {
+    title: "VGSEVEN",
+    description:
+      "Obsessed with AI, Quantum Computing, Space, Psychology and Philosophy and Entrepreneurship.",
+    url: "https://vgseven.com",
+    siteName: "VGSEVEN",
+    images: [
+      {
+        url: "https://eo4grnhr9puxdgdq.public.blob.vercel-storage.com/vgseven.png",
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "https://eo4grnhr9puxdgdq.public.blob.vercel-storage.com/vgseven.png",
+        width: 1800,
+        height: 1600,
+        alt: "VGSEVEN",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "VGSEVEN",
+    description:
+      "Obsessed with AI, Quantum Computing, Space, Psychology and Philosophy and Entrepreneurship.",
+    siteId: "7777",
+    creator: "@vgsevenn",
+    creatorId: "0707",
+    images: [
+      "https://eo4grnhr9puxdgdq.public.blob.vercel-storage.com/vgseven.png",
+    ],
+  },
+  metadataBase: new URL("https://vgseven.com"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/en-US",
+    },
   },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={font.className} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={GeistSansFont.className}
+      suppressHydrationWarning
+    >
       <body>
-        {/*Google Analytics Verification Start*/}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-RG7E1L1B9N"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-RG7E1L1B9N');`}
-        </Script>
-        {/*Google Analytics Verification End*/}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -41,7 +73,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         >
           <Header />
           {children}
-          <Footer />
+          <SpeedInsights />
           <Analytics />
         </ThemeProvider>
       </body>
